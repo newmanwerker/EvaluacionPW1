@@ -9,8 +9,35 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
         .carousel-item img {
-            object-fit: contain; /* or 'contain' depending on your needs */
-            height: 300px; /* adjust as needed */
+            object-fit: fill; /* or 'contain' depending on your needs */
+            height: 756px; /* adjust as needed */
+        }
+    </style>
+    <style>
+        .add-to-cart-button {
+            background-color: #4CAF50; /* Green background */
+            border: none; /* No border */
+            color: white; /* White text */
+            padding: 15px 32px; /* Some padding */
+            text-align: center; /* Centered text */
+            text-decoration: none; /* No underline */
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer; /* Mouse pointer on hover */
+            border-radius: 12px; /* Rounded corners */
+            transition: background-color 0.4s, color 0.4s;
+            transition-duration: 0.4s; /* Transition effect */
+        }
+        .add-to-cart-button:before {
+        content: attr(data-price); /* Show price by default */
+    }
+    .add-to-cart-button:hover:before {
+        content: 'Add to cart'; /* Show 'Add to cart' on hover */
+    }
+    
+        .add-to-cart-button:hover {
+            background-color: #2b692f; /* Green background on hover */
         }
     </style>
 </head>
@@ -50,13 +77,13 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="https://st2.depositphotos.com/3591429/5246/i/950/depositphotos_52468909-stock-photo-green-car.jpg" class="d-block w-100" alt="...">
+            <img src="https://www.bmw.cl/content/dam/bmw/marketLATAM/master/LandingPage/bmw-m4-new-01.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="https://st2.depositphotos.com/1063296/8337/i/450/depositphotos_83378584-stock-photo-modern-compact-red-car-front.jpg" class="d-block w-100" alt="...">
+            <img src="https://www.bmw.cl/content/dam/bmw/marketLATAM/bmw_cl/Home/Grid-Stage-Teaser/2021/BMW---Iframes-1680x756-S2.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="https://s1.abcstatics.com/media/motor/2015/12/21/coche-azul--620x349.jpg" class="d-block w-100" alt="...">
+            <img src="https://www.bmw.cl/content/dam/bmw/marketLATAM/bmw_cl/Home/Grid-Stage-Teaser/2021/BMW---Iframes-1680x756-S3.jpg" class="d-block w-100" alt="...">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -69,6 +96,12 @@
     </a>
 </div>
 
+<!-- Text between carousel and products -->
+<div style="text-align: center; padding: 20px;">
+    <h2>Welcome to our store!</h2>
+    <p>Check out our latest products below.</p>
+</div>
+
  <!-- Products -->
 <div id="products" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
     <!-- Existing products -->
@@ -76,7 +109,7 @@
         <h2>Product 1</h2>
         <div style="text-align: center;">
             <img src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1699455353-CMLye1U3UR.webp" alt="Auto fucsia" width="320" height="200">
-            <button onclick="cart.addItem('Product 1')">Add to cart</button>
+            <button class="add-to-cart-button" data-price="$99.99" onclick="cart.addItem('Product 1')"</button>
         </div>
     </div>
     <!-- Repeat for each product -->
@@ -84,7 +117,7 @@
         <h2>Product 2</h2>
         <div style="text-align: center;">
             <img src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1699455353-CMLye1U3UR.webp" alt="Auto fucsia" width="320" height="200">
-            <button onclick="cart.addItem('Product 2')">Add to cart</button>
+            <button class="add-to-cart-button" onclick="cart.addItem('Product 2')">Add to cart</button>
         </div>
     </div>
     <!-- Repeat for each product -->
@@ -92,7 +125,7 @@
         <h2>Product 3</h2>
         <div style="text-align: center;">
             <img src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1699455353-CMLye1U3UR.webp" alt="Auto fucsia" width="320" height="200">
-            <button onclick="cart.addItem('Product 3')">Add to cart</button>
+            <button class="add-to-cart-button" onclick="cart.addItem('Product 3')">Add to cart</button>
         </div>
     </div>
     <!-- New products -->
@@ -100,21 +133,21 @@
         <h2>Product 4</h2>
         <div style="text-align: center;">
             <img src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1699455353-CMLye1U3UR.webp" alt="Auto fucsia" width="320" height="200">
-            <button onclick="cart.addItem('Product 4')">Add to cart</button>
+            <button class="add-to-cart-button" onclick="cart.addItem('Product 4')">Add to cart</button>
         </div>
     </div>
     <div class="product" style="flex: 1 0 30%; margin: 1%;">
         <h2>Product 5</h2>
         <div style="text-align: center;">
             <img src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1699455353-CMLye1U3UR.webp" alt="Auto fucsia" width="320" height="200">
-            <button onclick="cart.addItem('Product 5')">Add to cart</button>
+            <button class="add-to-cart-button" onclick="cart.addItem('Product 5')">Add to cart</button>
         </div>
     </div>
     <div class="product" style="flex: 1 0 30%; margin: 1%;">
         <h2>Product 6</h2>
         <div style="text-align: center;">
             <img src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1699455353-CMLye1U3UR.webp" alt="Auto fucsia" width="320" height="200">
-            <button onclick="cart.addItem('Product 6')">Add to cart</button>
+            <button class="add-to-cart-button" onclick="cart.addItem('Product 6')">Add to cart</button>
         </div>
     </div>
 </div>
