@@ -63,6 +63,20 @@
                 <li>
                     <a class="nav-link" href="contacto.html">Contacto</a>
                 </li>
+                <!-- Other navbar items -->
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarCart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Cart
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarCart">
+        <div id="cartItems">
+            <!-- Cart items will be added here -->
+        </div>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="checkout.html">Checkout</a>
+    </div>
+</li>
+<!-- Other navbar items -->
             </ul>
         </div>
     </nav>
@@ -109,7 +123,7 @@
         <h2>Great Wall Haval H6</h2>
         <div style="text-align: center;">
             <img src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1699455353-CMLye1U3UR.webp" alt="Auto fucsia" width="320" height="200">
-            <button class="add-to-cart-button" data-price="$19.690.000" onclick="cart.addItem('Product 1')"</button>
+            <button class="add-to-cart-button" data-price="$19.690.000" onclick="addToCart('Great Wall Haval H6')"</button>
         </div>
     </div>
     <!-- Repeat for each product -->
@@ -117,7 +131,7 @@
         <h2>Mazda CX-5</h2>
         <div style="text-align: center;">
             <img src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/versions/2022-05-20-CX-5_KFLA_KSN3LAF_46V_KG2_EXT_High_TransparentPNG.png" alt="Auto fucsia" width="320" height="200">
-            <button class="add-to-cart-button" data-price="$23.790.000" onclick="cart.addItem('Product 2')"</button>
+            <button class="add-to-cart-button" data-price="$23.790.000" onclick="addToCart('Mazda CX-5')"</button>
         </div>
     </div>
     <!-- Repeat for each product -->
@@ -125,7 +139,7 @@
         <h2>Great Wall Haval Dargo</h2>
         <div style="text-align: center;">
             <img src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1699379505-TjiLDVLzQg.webp" alt="Auto fucsia" width="320" height="200">
-            <button class="add-to-cart-button" data-price="$22.190.000" onclick="cart.addItem('Product 3')"</button>
+            <button class="add-to-cart-button" data-price="$22.190.000" onclick="addToCart('Great Wall Haval Dargo')"</button>
         </div>
     </div>
     <!-- New products -->
@@ -133,21 +147,21 @@
         <h2>Changan Alsvin</h2>
         <div style="text-align: center;">
             <img src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/2021-08-09-new-changan-alsvin-elite-at.png" alt="Auto fucsia" width="320" height="200">
-            <button class="add-to-cart-button" data-price="$10.490.000"  onclick="cart.addItem('Product 4')"</button>
+            <button class="add-to-cart-button" data-price="$10.490.000"  onclick="addToCart('Changan Alsvin')"</button>
         </div>
     </div>
     <div class="product" style="flex: 1 0 30%; margin: 1%;">
         <h2>Great Wall Poer</h2>
         <div style="text-align: center;">
             <img src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1677503460-9VX4beIvCb.webp" alt="Auto fucsia" width="320" height="200">
-            <button class="add-to-cart-button" data-price="$17.481.100" onclick="cart.addItem('Product 5')"</button>
+            <button class="add-to-cart-button" data-price="$17.481.100" onclick="addToCart('Great Wall Poer')"</button>
         </div>
     </div>
     <div class="product" style="flex: 1 0 30%; margin: 1%;">
         <h2>Changan UNI-T</h2>
         <div style="text-align: center;">
             <img src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1709914091-kYIx90aZmD.webp" alt="Auto fucsia" width="320" height="200">
-            <button class="add-to-cart-button" data-price="$19.490.000"  onclick="cart.addItem('Product 6')"</button>
+            <button class="add-to-cart-button" data-price="$19.490.000"  onclick="addToCart('Changan UNI-T')"</button>
         </div>
     </div>
 </div>
@@ -171,15 +185,9 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- Custom JS -->
-    <script src="main.js"></script>
-
-
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>The car "Changan Alsvin" is out of stock.</p>
-        </div>
-      </div>
       <script src="carrito.js"></script>
+      <script>
+        displayCart();
+    </script>
 </body>
 </html>
