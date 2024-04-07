@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
         .carousel-item img {
-            object-fit: fill; /* or 'contain' depending on your needs */
-            height: 756px; /* adjust as needed */
+            object-fit: cover; /* or 'contain' depending on your needs */
+            height: 500px; /* adjust as needed */
         }
     </style>
 </head>
 <body>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <!-- Navbar content -->
@@ -49,43 +50,7 @@
         </div>
     </nav>
 
-    <!-- Pie de página -->
-    <footer class="footer mt-auto py-3 bg-light">
-        <div class="container">
-            <div class="row justify-content-center">
-                <span class="text-muted">
-                    Nuestros mas sinceros agradecimientos a los siguientes mencionados:
-                </span>
-            </div>
-        </div>
-    </footer>
-
-
-    <!-- Sección de tarjetas -->
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <!-- Tarjeta 1 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://phantom-marca-mx.unidadeditorial.es/5e9ec3c0e2ca387fda7f6e7a07ee5929/resize/828/f/jpg/mx/assets/multimedia/imagenes/2023/12/12/17023578484660.jpg" class="card-img-top" alt="Imagen 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Sebastian Ayala</h5>
-                        <p class="card-text">Un Cra</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Tarjeta 2 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://media.istockphoto.com/id/1434414228/es/foto/gato-triste-severo-aislado-sobre-fondo-blanco.jpg?s=612x612&w=0&k=20&c=QGGbL2hCXlHUOYAy9E9X4ltZDYfI7a9yMd7Hio3ZK4A=" class="card-img-top" alt="Imagen 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Fernando Matus</h5>
-                        <p class="card-text">Otro Cra</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- AQUI VAN LOS PRODUCTOS -->
 
     <!-- Pie de página -->
     <footer class="footer mt-auto py-3 bg-light">
@@ -94,18 +59,28 @@
                 "©2024 AutomotoraSebaFeña. Todos los derechos reservados. 
                 Somos su destino integral para la adquisición de vehículos nuevos y usados de todas las marcas existentes. 
                 Nuestra pasión por la excelencia en el servicio al cliente nos impulsa a ofrecer una amplia gama de opciones para satisfacer sus necesidades de movilidad. 
-                Visítenos hoy mismo para descubrir nuestra selección de vehículos premium y experimentar un servicio excepcional. | Teléfono: +56 9 1234 5678 | Correo Electrónico: AutitoBonito@gmail.com"</span>
+                Visítenos hoy mismo para descubrir nuestra selección de vehículos premium y experimentar un servicio excepcional. | Teléfono: +56 9 1234 5678 | Correo Electrónico: AutitoBonito@gmail.com"
+            </span>
         </div>
     </footer>
 
-        <!-- Bootstrap JS and jQuery -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-        <!-- Custom JS -->
-        <script src="carrito.js"></script>
-        <script>
-        displayCart();
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío real del formulario
+            $('#successModal').modal('show');
+        });
     </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="carrito.js"></script>
+    <script>
+      displayCart();
+    </script>
+
 </body>
 </html>
