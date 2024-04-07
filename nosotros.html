@@ -36,6 +36,20 @@
                 <li>
                     <a class="nav-link" href="contacto.html">Contacto</a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarCart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Carrito</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarCart">
+                        <div id="cartItems"></div>
+                        <div class="dropdown-divider"></div>
+                        <button onclick="clearCart()" class="dropdown-item">Limpiar carrito</button>
+                        <a class="dropdown-item" href="checkout.html">Finalizar pago</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+
             </ul>
         </div>
     </nav>
@@ -121,7 +135,11 @@
     <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
     <!-- Custom JS -->
-    <script src="main.js"></script>
+    <script src="carrito.js"></script>
+    <script>
+      displayCart();
+  </script>
 </body>
 </html>
