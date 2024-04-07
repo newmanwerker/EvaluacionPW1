@@ -1,7 +1,7 @@
 var cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function addToCart(item, price) {
-    cart.push({name: item, price: price});
+    cart.push({name: item, price: Number(price)});
     localStorage.setItem('cart', JSON.stringify(cart));
     displayCart();
     alert(item + ' fue añadido a tu carrito!');
@@ -30,3 +30,10 @@ function clearCart() {
     displayCart();
 }
 
+function calculateTotal() {
+    var total = 0;
+    for (var i = 0; i < cart.length; i++) {
+        total += Number(cart[i].price);
+    }
+    return total;
+}
