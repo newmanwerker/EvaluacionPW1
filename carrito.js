@@ -43,4 +43,3 @@ function priceStringToNumber(priceString) {
     // Remove the dollar sign and dots, and convert to number
     return Number(priceString.replace('$', '').replace(/\./g, ''));
 }
-
