@@ -4,18 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Productos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
         .carousel-item img {
-            object-fit: cover; /* or 'contain' depending on your needs */
-            height: 500px; /* adjust as needed */
+            object-fit: fill; /* or 'contain' depending on your needs */
+            height: 756px; /* adjust as needed */
+        }
+    </style>
+    <style>
+        .add-to-cart-button {
+            background-color: #4CAF50; /* Green background */
+            border: none; /* No border */
+            color: white; /* White text */
+            padding: 15px 32px; /* Some padding */
+            text-align: center; /* Centered text */
+            text-decoration: none; /* No underline */
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer; /* Mouse pointer on hover */
+            border-radius: 12px; /* Rounded corners */
+            transition: background-color 0.4s, color 0.4s;
+            transition-duration: 0.4s; /* Transition effect */
+        }
+        .add-to-cart-button:before {
+        content: attr(data-price); /* Show price by default */
+    }
+    .add-to-cart-button:hover:before {
+        content: 'Añadir al carrito'; /* Show 'Add to cart' on hover */
+    }
+    
+        .add-to-cart-button:hover {
+            background-color: #2b692f; /* Green background on hover */
+        }
+
+
+    </style>
+    <style>
+        .product-image:hover {
+            transform: scale(1.1);
+            transition: transform .2s;
         }
     </style>
 </head>
 <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <!-- Navbar content -->
@@ -37,50 +72,134 @@
                 <li>
                     <a class="nav-link" href="contacto.html">Contacto</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarCart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Carrito</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarCart">
-                        <div id="cartItems"></div>
-                        <div class="dropdown-divider"></div>
-                        <button onclick="clearCart()" class="dropdown-item">Limpiar carrito</button>
-                        <a class="dropdown-item" href="checkout.html">Finalizar pago</a>
-                    </div>
-                </li>
+                <!-- Other navbar items -->
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarCart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Carrito
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarCart">
+        <div id="cartItems">
+        </div>
+        <div class="dropdown-divider"></div>
+        <button onclick="clearCart()" class="dropdown-item">Limpiar carrito</button>
+        <a class="dropdown-item" href="checkout.html">Finalizar pago</a>
+    </div>
+</li>
+<!-- Other navbar items -->
             </ul>
         </div>
     </nav>
+    
 
-    <!-- AQUI VAN LOS PRODUCTOS -->
+   <!-- Carousel -->
 
-    <!-- Pie de página -->
-    <footer class="footer mt-auto py-3 bg-light">
-        <div class="container">
-            <span class="text-muted">
-                "©2024 AutomotoraSebaFeña. Todos los derechos reservados. 
-                Somos su destino integral para la adquisición de vehículos nuevos y usados de todas las marcas existentes. 
-                Nuestra pasión por la excelencia en el servicio al cliente nos impulsa a ofrecer una amplia gama de opciones para satisfacer sus necesidades de movilidad. 
-                Visítenos hoy mismo para descubrir nuestra selección de vehículos premium y experimentar un servicio excepcional. | Teléfono: +56 9 1234 5678 | Correo Electrónico: AutitoBonito@gmail.com"
-            </span>
+
+<!-- Text between carousel and products -->
+<div style="text-align: center; padding: 20px;">
+    <h2>Revisa todos nuestros productos aqui!</h2>
+</div>
+
+ <!-- Products -->
+<div id="products" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+    <!-- Existing products -->
+    <div class="product" style="flex: 1 0 30%; margin: 1%;">
+        <h2>Great Wall Haval H6</h2>
+        <div style="text-align: center;">
+            <img class="product-image" src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1699455353-CMLye1U3UR.webp" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
+            <button class="add-to-cart-button" data-price="$19.690.000" onclick="addToCart('Great Wall Haval H6',19690000)"</button>
         </div>
-    </footer>
+    </div>
+    <!-- Repeat for each product -->
+    <div class="product" style="flex: 1 0 30%; margin: 1%;">
+        <h2>Mazda CX-5</h2>
+        <div style="text-align: center;">
+            <img class="product-image" src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/versions/2022-05-20-CX-5_KFLA_KSN3LAF_46V_KG2_EXT_High_TransparentPNG.png" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
+            <button class="add-to-cart-button" data-price="$23.790.000" onclick="addToCart('Mazda CX-5',23790000)"</button>
+        </div>
+    </div>
+    <!-- Repeat for each product -->
+    <div class="product" style="flex: 1 0 30%; margin: 1%;">
+        <h2>Great Wall Haval Dargo</h2>
+        <div style="text-align: center;">
+            <img class="product-image" src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1699379505-TjiLDVLzQg.webp" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
+            <button class="add-to-cart-button" data-price="$22.190.000" onclick="addToCart('Great Wall Haval Dargo',22190000)"</button>
+        </div>
+    </div>
+    <!-- New products -->
+    <div class="product" style="flex: 1 0 30%; margin: 1%;">
+        <h2>Changan Alsvin</h2>
+        <div style="text-align: center;">
+            <img class="product-image" src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/2021-08-09-new-changan-alsvin-elite-at.png" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
+            <button class="add-to-cart-button" data-price="$10.490.000"  onclick="addToCart('Changan Alsvin',10490000)"</button>
+        </div>
+    </div>
+    <div class="product" style="flex: 1 0 30%; margin: 1%;">
+        <h2>Great Wall Poer</h2>
+        <div style="text-align: center;">
+            <img class="product-image" src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1677503460-9VX4beIvCb.webp" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
+            <button class="add-to-cart-button" data-price="$17.481.100" onclick="addToCart('Great Wall Poer',17481100)"</button>
+        </div>
+    </div>
+    <div class="product" style="flex: 1 0 30%; margin: 1%;">
+        <h2>Changan UNI-T</h2>
+        <div style="text-align: center;">
+            <img class="product-image" src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1709914091-kYIx90aZmD.webp" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
+            <button class="add-to-cart-button" data-price="$19.490.000"  onclick="addToCart('Changan UNI-T',19490000)"</button>
+        </div>
+    </div>
+    <div class="product" style="flex: 1 0 30%; margin: 1%;">
+        <h2>Mitsubishi Montero Sport</h2>
+        <div style="text-align: center;">
+            <img  class="product-image" src="https://www.arteagarentacar.cl/images/sites_products-636eaaa481a73.png" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
+            <button class="add-to-cart-button" data-price="$33.990.000"  onclick="addToCart('Mitsubishi Montero Sport',33990000)"</button>
+        </div>
+    </div>
+    <div class="product" style="flex: 1 0 30%; margin: 1%;">
+        <h2>Camioneta RAM 1200</h2>
+        <div style="text-align: center;">
+            <img class="product-image" src="https://www.arteagarentacar.cl/images/sites_products-6320eba8ec365.png" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
+            <button class="add-to-cart-button" data-price="$16.750.000"  onclick="addToCart('Camioneta RAM 1200',16750000)"</button>
+        </div>
+    </div>
+    <div class="product" style="flex: 1 0 30%; margin: 1%;">
+        <h2>Toyota Prius</h2>
+        <div style="text-align: center;">
+            <img  class="product-image" src="https://static.cargurus.com/images/forsale/2023/12/31/01/29/2023_toyota_prius-pic-714742726976446821-1024x768.jpeg" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
+            <button class="add-to-cart-button" data-price="$26.336.446"  onclick="addToCart('Toyota Prius',26336446)"</button>
+        </div>
+    </div>
+</div>
+<!-- Add this at the end of your HTML file -->
+<div style="text-align: right; padding: 20px;">
+    <button onclick="location.href='productos2.html'" style="background-color: #379cca; /* Green */
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;">Página siguiente</button>
+</div>
 
-    <script>
-        document.querySelector('form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evita el envío real del formulario
-            $('#successModal').modal('show');
-        });
-    </script>
-
-    <!-- Bootstrap JS -->
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+        <span class="text-muted">
+            "©2024 AutomotoraSebaFeña. Todos los derechos reservados. 
+            Somos su destino integral para la adquisición de vehículos nuevos y usados de todas las marcas existentes. 
+            Nuestra pasión por la excelencia en el servicio al cliente nos impulsa a ofrecer una amplia gama de opciones para satisfacer sus necesidades de movilidad. 
+            Visítenos hoy mismo para descubrir nuestra selección de vehículos premium y experimentar un servicio excepcional. | Teléfono: +56 9 1234 5678 | Correo Electrónico: AutitoBonito@gmail.com"
+        </span>
+    </div>
+</footer>
+    <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-    <!-- Custom JSs -->
-    <script src="carrito.js"></script>
-    <script>
-      displayCart();
+    <!-- Custom JS -->
+      <script src="carrito.js"></script>
+      <script>
+        displayCart();
     </script>
-
 </body>
 </html>
