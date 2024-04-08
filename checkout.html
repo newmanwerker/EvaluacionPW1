@@ -18,7 +18,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <!-- Navbar contesnt -->
+        <!-- Navbar content -->
         <a class="navbar-brand" href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwIPHT---ar3QBrKBdygiiGxiyABUXBx4TItwe0yHy_g&s" alt="Logo" style="width:40px;"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -72,6 +72,7 @@
             <!-- The JavaScript code will dynamically insert rows here -->
         </tbody>
     </table>
+    <h4 class="text-right">Total: $30</h4>
     <div class="text-right">
         <button class="btn btn-primary">Proceed to Payment</button>
     </div>
@@ -100,65 +101,51 @@
         displayCart();
     </script>
 <script>
-    function priceStringToNumber(priceString) {
-        // Remove the dollar sign and dots, and convert to number
-        return Number(priceString.replace('$', '').replace(/\./g, ''));
-    }
+    calculateTotal() 
+    </script>
+<script>
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    let tableBody = document.querySelector('.table tbody');
+    let total = BigInt(0);
 
-    function formatPrice(price) {
-        // Convert to string and add dots every three digits
-        let priceString = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-        return '$' + priceString;
-    }
+    cartItems.forEach((item, index) => {
+        let row = document.createElement('tr');
 
-    function updateCartDisplay() {
-        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-        let tableBody = document.querySelector('.table tbody');
-        let total = 0;
+        let idCell = document.createElement('th');
+        idCell.scope = 'row';
+        idCell.innerText = index + 1;
+        row.appendChild(idCell);
 
-        // Clear the table body
-        tableBody.innerHTML = '';
+        let nameCell = document.createElement('td');
+        nameCell.innerText = item.name;
+        row.appendChild(nameCell);
 
-        for (let i = 0; i < cartItems.length; i++) {
-            let item = cartItems[i];
-            let row = document.createElement('tr');
+        let priceCell = document.createElement('td');
+        priceCell.innerText = item.price;
+        row.appendChild(priceCell);
 
-            let indexCell = document.createElement('td');
-            indexCell.innerText = i + 1;
-            row.appendChild(indexCell);
+        // Add the price to the total
+        total += BigInt(item.price);
 
-            let nameCell = document.createElement('td');
-            nameCell.innerText = item.name;
-            row.appendChild(nameCell);
+        let removeCell = document.createElement('td');
+        let removeButton = document.createElement('button');
+        removeButton.innerText = 'Remove';
+        removeButton.className = 'btn btn-danger';
+        removeButton.addEventListener('click', () => {
+            cartItems.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            row.parentNode.removeChild(row);
+            total -= BigInt(item.price);
+            document.querySelector('.text-right h4').innerText = 'Total: $' + total.toString();
+        });
+        removeCell.appendChild(removeButton);
+        row.appendChild(removeCell);
 
-            let priceCell = document.createElement('td');
-            priceCell.innerText = formatPrice(item.price); // Use formatPrice here
-            row.appendChild(priceCell);
+        tableBody.appendChild(row);
+    });
 
-            let removeCell = document.createElement('td');
-            let removeButton = document.createElement('button');
-            removeButton.innerText = 'Remove';
-            removeButton.className = 'btn btn-danger';
-            removeButton.addEventListener('click', () => {
-                // Remove the item from the cart
-                cartItems.splice(i, 1);
-                localStorage.setItem('cart', JSON.stringify(cartItems));
-                // Update the cart display
-                updateCartDisplay();
-            });
-            removeCell.appendChild(removeButton);
-            row.appendChild(removeCell);
-
-            tableBody.appendChild(row);
-
-            total += priceStringToNumber(item.price); // Use priceStringToNumber here
-        }
-
-        document.querySelector('.text-right h4').innerText = 'Total: ' + formatPrice(total); // Use formatPrice here
-    }
-
-    // Update the cart display when the script runs
-    updateCartDisplay();
+    // Update the total in the DOM
+    document.querySelector('.text-right h4').innerText = 'Total: $' + total.toString();
 </script>
 </body>
 </html>

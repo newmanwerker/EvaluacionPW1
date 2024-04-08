@@ -20,7 +20,7 @@ function displayCart() {
     cartItemsDiv.innerHTML = '';
     var cart = JSON.parse(localStorage.getItem('cart')) || [];
     for (var i = 0; i < cart.length; i++) {
-        cartItemsDiv.innerHTML += '<div class="dropdown-item">' + cart[i].name + ' - ' + formatPrice(cart[i].price) + '<button onclick="removeFromCart(\'' + cart[i].name + '\')">Eliminar</button></div>';
+        cartItemsDiv.innerHTML += '<div class="dropdown-item">' + cart[i].name + ' - ' + cart[i].price + '<button onclick="removeFromCart(\'' + cart[i].name + '\')">Eliminar</button></div>';
     }
 }
 
@@ -32,14 +32,8 @@ function clearCart() {
 
 function calculateTotal() {
     var total = 0;
-    var cart = JSON.parse(localStorage.getItem('cart')) || [];
     for (var i = 0; i < cart.length; i++) {
-        total += priceStringToNumber(cart[i].price);
+        total += Number(cart[i].price);
     }
-    return formatPrice(total);
-}
-
-function priceStringToNumber(priceString) {
-    // Remove the dollar sign and dots, and convert to number
-    return Number(priceString.replace('$', '').replace(/\./g, ''));
+    return total;
 }
