@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Checkout Page</title>
+        <title>Página de checkout</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <!-- Google Font -->
@@ -63,18 +63,18 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Product</th>
-                <th scope="col">Price</th>
-                <th scope="col">Remove</th> <!-- New header -->
+                <th scope="col">Producto</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Borrar</th> <!-- New header -->
             </tr>
         </thead>
         <tbody>
             <!-- The JavaScript code will dynamically insert rows here -->
         </tbody>
     </table>
-    <h4 class="text-right">Total: $30</h4>
+    <h4 class="text-right">Total: Página en desarrollo</h4>
     <div class="text-right">
-        <button class="btn btn-primary">Proceed to Payment</button>
+        <button class="btn btn-primary">Página en desarrollo</button>
     </div>
 </div>
 
@@ -108,44 +108,44 @@
     let tableBody = document.querySelector('.table tbody');
     let total = BigInt(0);
 
-    cartItems.forEach((item, index) => {
-        let row = document.createElement('tr');
+cartItems.forEach((item, index) => {
+    let row = document.createElement('tr');
 
-        let idCell = document.createElement('th');
-        idCell.scope = 'row';
-        idCell.innerText = index + 1;
-        row.appendChild(idCell);
+    let idCell = document.createElement('th');
+    idCell.scope = 'row';
+    idCell.innerText = index + 1;
+    row.appendChild(idCell);
 
-        let nameCell = document.createElement('td');
-        nameCell.innerText = item.name;
-        row.appendChild(nameCell);
+    let nameCell = document.createElement('td');
+    nameCell.innerText = item.name;
+    row.appendChild(nameCell);
 
-        let priceCell = document.createElement('td');
-        priceCell.innerText = item.price;
-        row.appendChild(priceCell);
+    let priceCell = document.createElement('td');
+    priceCell.innerText = '$' + new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'USD' }).format(item.price).split(',')[0];
+    row.appendChild(priceCell);
 
-        // Add the price to the total
-        total += BigInt(item.price);
+    // Add the price to the total
+    total += BigInt(item.price);
 
-        let removeCell = document.createElement('td');
-        let removeButton = document.createElement('button');
-        removeButton.innerText = 'Remove';
-        removeButton.className = 'btn btn-danger';
-        removeButton.addEventListener('click', () => {
-            cartItems.splice(index, 1);
-            localStorage.setItem('cart', JSON.stringify(cartItems));
-            row.parentNode.removeChild(row);
-            total -= BigInt(item.price);
-            document.querySelector('.text-right h4').innerText = 'Total: $' + total.toString();
-        });
-        removeCell.appendChild(removeButton);
-        row.appendChild(removeCell);
-
-        tableBody.appendChild(row);
+    let removeCell = document.createElement('td');
+    let removeButton = document.createElement('button');
+    removeButton.innerText = 'Remove';
+    removeButton.className = 'btn btn-danger';
+    removeButton.addEventListener('click', () => {
+        cartItems.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        row.parentNode.removeChild(row);
+        total -= BigInt(item.price);
+        document.querySelector('.text-right h4').innerText = 'Total: $' + new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'USD' }).format(total).split(',')[0];
     });
+    removeCell.appendChild(removeButton);
+    row.appendChild(removeCell);
+
+    tableBody.appendChild(row);
+});
 
     // Update the total in the DOM
-    document.querySelector('.text-right h4').innerText = 'Total: $' + total.toString();
+    document.querySelector('.text-right h4').innerText = 'Total: $' + new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'USD' }).format(total).split(',')[0];
 </script>
 </body>
 </html>
