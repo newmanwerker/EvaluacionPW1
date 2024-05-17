@@ -7,16 +7,10 @@
     <title>Contacto</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <style>
-        .carousel-item img {
-            object-fit: cover; /* or 'contain' depending on your needs */
-            height: 500px; /* adjust as needed */
-        }
-    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="carrito.js"></script>
 </head>
 <body>
-
-    <!-- Navbar -->
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <!-- Navbar content -->
@@ -54,73 +48,37 @@
     <!-- Formulario de contacto -->
     <div class="container mt-5">
         <h2>COMENTANOS TUS PREFERENCIAS</h2>
-        <form>
+        <form id="validarFormulario">
+            <div class="form-group">
+                <label for="edad">Edad</label>
+                <input type="text" class="form-control" id="edad" placeholder="Ingresa tu edad">
+            </div>
             <div class="form-group">
                 <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+                <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre">
             </div>
             <div class="form-group">
                 <label for="apellido">Apellido</label>
-                <input type="text" class="form-control" id="apellido" placeholder="Ingresa tu apellido" required>
+                <input type="text" class="form-control" id="apellido" placeholder="Ingresa tu apellido">
             </div>
             <div class="form-group">
                 <label for="correo">Correo Electrónico</label>
-                <input type="email" class="form-control" id="correo" placeholder="nombre@ejemplo.com" required>
+                <input type="email" class="form-control" id="correo" placeholder="nombre@ejemplo.com">
             </div>
             <div class="form-group">
                     <label for="telefono">Teléfono</label>
-                    <input type="tel" class="form-control" id="telefono" placeholder="Ingresa tu número de teléfono" required>
+                    <input type="tel" class="form-control" id="telefono" placeholder="Ingresa tu número de teléfono">
             </div>
             <div class="form-group">
                     <label for="comuna">Comuna</label>
-                    <input type="text" class="form-control" id="comuna" placeholder="Ingresa tu comuna" required>
+                    <input type="text" class="form-control" id="comuna" placeholder="Ingresa tu comuna">
             </div>
             <div class="form-group">
                     <label for="comentario">Comentario</label>
-                    <textarea class="form-control" id="comentario" rows="3" placeholder="Escribe tu comentario aquí" required></textarea>
+                    <textarea class="form-control" id="comentario" rows="3" placeholder="Escribe tu comentario aquí"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
-    </div>
-
-    <!-- Modal de éxito -->
-    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="successModalLabel">Éxito</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Mensaje enviado con éxito.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-  
-    <!-- Modal de error -->
-    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="errorModalLabel">Error</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Por favor, completa todos los campos correctamente.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- Pie de página -->
@@ -134,24 +92,9 @@
             </span>
         </div>
     </footer>
-  
-    <script>
-        document.querySelector('form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evita el envío real del formulario
-            $('#successModal').modal('show');
-        });
-    </script>
 
     <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-    <!-- Custom JS -->
-    <script src="carrito.js"></script>
-    <script>
-      displayCart();
-    </script>
-  
 </body>
 </html>

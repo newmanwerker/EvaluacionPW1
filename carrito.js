@@ -1,3 +1,4 @@
+//Funciones JavaScript
 var cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function addToCart(item, price) {
@@ -37,3 +38,37 @@ function calculateTotal() {
     }
     return total;
 }
+//Validaciones con jQuery
+$(document).ready(function(){
+    $("#validarFormulario").submit(function(event){
+        // Evitar que el formulario se envíe automáticamente
+        event.preventDefault();
+        
+        // Realizar las validaciones
+        var edad = $("#edad").val();
+        var nombre = $("#nombre").val();
+        var apellido = $("#apellido").val();
+
+        if(edad < 18){
+            alert("Debes ser mayor de edad para registrarte.");
+            return;
+        }
+        if(edad > 99){
+            alert("Edad inválida.");
+            return;
+        }
+        // Nombre, Apellidos: largo entre 3 y 20 caracteres
+        if(nombre.length < 3 || nombre.length > 20 ||
+            apellido.length < 3 || apellido.length > 20){
+            alert("El Nombre y los Apellidos deben tener entre 3 y 20 caracteres.");
+            return;
+        }
+        else{
+            // Validaciones aceptadas
+            alert("¡Registro exitoso!");
+            // Limpiar el formulario
+            $("#validarFormulario")[0].reset();
+        }       
+        // Aquí podrías enviar el formulario utilizando AJAX o cualquier otro método
+    });
+});
