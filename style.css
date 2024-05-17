@@ -1,0 +1,61 @@
+body {
+    background: linear-gradient(to bottom  , #096965, #DDDED6, #025855);
+}
+.footer{    
+
+    background:#02585500;
+    color:white;
+}
+
+.carousel-item img {
+    object-fit: fill; /* or 'contain' depending on your needs */
+    
+}
+
+.carousel-item:hover {
+    transition: 1s;
+    opacity: 0.5;
+}
+
+.carousel-item:not(:hover) {
+    transition: 1s;
+    opacity: 1;
+}
+.add-to-cart-button {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* No border */
+    color: white; /* White text */
+    padding: 15px 32px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; /* Mouse pointer on hover */
+    border-radius: 12px; /* Rounded corners */
+    transition: background-color 0.4s, color 0.4s;
+    transition-duration: 0.4s; /* Transition effect */
+}
+.add-to-cart-button:before {
+content: attr(data-price); /* Show price by default */
+}
+.add-to-cart-button:hover:before {
+content: 'Añadir al carrito'; /* Show 'Add to cart' on hover */
+}
+
+.add-to-cart-button:hover {
+    background-color: #2b692f; /* Green background on hover */
+}
+.navbar {
+    background-color: #02585500;
+    color: white;
+}
+.product {
+    flex: 1 0 30%;
+    margin: 1%;
+}
+
+.product-image {
+    text-align: center;
+    
+}
