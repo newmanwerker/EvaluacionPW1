@@ -75,10 +75,13 @@ transition: 1.4s; /* Transition effect */
     
 }
 .card {
+    display: grid;
     background-color: #02585500;
     color: rgb(0, 0, 0);
     padding: 10px;
     text-align: center;
-    transition: 0.3s;
+
+
+    
 }
 
