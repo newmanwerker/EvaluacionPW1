@@ -1,10 +1,18 @@
 body {
+    font-family: 'Roboto',sans-serif;
     background: linear-gradient(to bottom  , #096965, #DDDED6, #025855);
+    font-weight: bold;
+}
+h2{
+    font-family: 'Roboto',sans-serif;
+    font-weight: bold;
 }
 .footer{    
 
     background:#02585500;
-    color:white;
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+
 }
 
 .carousel-item img {
@@ -22,10 +30,11 @@ body {
     opacity: 1;
 }
 .add-to-cart-button {
-    background-color: #4CAF50; /* Green background */
+    font-family: 'Roboto';
+    font-weight: bold;
+    background-color: #F29422; /* Green background */
     border: none; /* No border */
     color: white; /* White text */
-    padding: 15px 32px; /* Some padding */
     text-align: center; /* Centered text */
     text-decoration: none; /* No underline */
     display: inline-block;
@@ -39,12 +48,17 @@ body {
 .add-to-cart-button:before {
 content: attr(data-price); /* Show price by default */
 }
-.add-to-cart-button:hover:before {
+.add-to-cart-button:hover:before { 
 content: 'Añadir al carrito'; /* Show 'Add to cart' on hover */
+transition: 1.4s; /* Transition effect */
 }
 
+.add-to-cart-button{
+    padding: 14px 40px;
+}
 .add-to-cart-button:hover {
-    background-color: #2b692f; /* Green background on hover */
+    background-color: #c97b1b; /* Green background on hover */
+    transition: 1.4s;
 }
 .navbar {
     background-color: #02585500;
@@ -58,4 +72,13 @@ content: 'Añadir al carrito'; /* Show 'Add to cart' on hover */
 .product-image {
     text-align: center;
     
+    
 }
+.card {
+    background-color: #02585500;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
