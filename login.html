@@ -4,17 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros</title>
-    <!-- Bootstrap CSS -->
+    <title>Vista Principal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loginstyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <style>
-        .carousel-item img {
-            object-fit: fill; /* or 'contain' depending on your needs */
-            height: 756px; /* adjust as needed */
-        }
-    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -65,71 +59,33 @@
             </li>
         </div>
     </nav>
-
-    <!-- Pie de página -->
-    <footer class="footer mt-auto py-3 ">
-        <div class="container">
-            <div class="row justify-content-center">
-                    Nuestros mas sinceros agradecimientos a los siguientes mencionados:
-                </h2>
+    
+    <div class="center">
+        <h1>Login</h1>
+        <form method="post">
+            <div class="txt_field">
+                <input type="text" required>
+                <span></span>
+                <label>Nombre de Usuario</label>
             </div>
-        </div>
-    </footer>
-
-
-    <!-- Sección de tarjetas -->
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <!-- Tarjeta 1 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://phantom-marca-mx.unidadeditorial.es/5e9ec3c0e2ca387fda7f6e7a07ee5929/resize/828/f/jpg/mx/assets/multimedia/imagenes/2023/12/12/17023578484660.jpg" class="card-img-top" alt="Imagen 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Sebastian Ayala</h5>
-                        <p class="card-text">Un Cra</p>
-                    </div>
-                </div>
+            <div class="txt_field">
+                <input type="password" required>
+                <span></span>
+                <label>Contraseña</label>
             </div>
-            <!-- Tarjeta 2 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://media.istockphoto.com/id/1434414228/es/foto/gato-triste-severo-aislado-sobre-fondo-blanco.jpg?s=612x612&w=0&k=20&c=QGGbL2hCXlHUOYAy9E9X4ltZDYfI7a9yMd7Hio3ZK4A=" class="card-img-top" alt="Imagen 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Fernando Matus</h5>
-                        <p class="card-text">Otro Cra</p>
-                    </div>
-                </div>
-            </div>
+            <div class="pass">¿Olvidaste tu contraseña?</div>
+            <input type="submit" value="Login">
+        </form>
+        <div class="signup_link">
+            No tienes una cuenta? <a href="#">Registrate</a>
         </div>
-    </div>
-
-    <!-- Pie de página -->
-    <footer class="footer mt-auto py-3 ">
-        <div class="container">
-            <span>
-                **© 2024 [Nombre de la Empresa] - Todos los derechos reservados.**
-
-                **Dirección:** Calle Falsa 123, Ciudad, País
-
-                **Teléfono:** (+123) 456-7890 | **Correo Electrónico:** info@nombreempresa.com
-
-                **Horarios de Atención:** Lunes a Viernes: 9:00 AM - 6:00 PM | Sábados: 10:00 AM - 4:00 PM
-
-                **Políticas:** [Términos y Condiciones](#) | [Política de Privacidad](#)
-
-                **Nuestra misión:** Traer la naturaleza a tu hogar con las mejores plantas y el servicio más dedicado. ¡Gracias por elegirnos para embellecer tus espacios!
-
-        </span>
-        </div>
-    </footer>
-
-        <!-- Bootstrap JS and jQuery -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-        <!-- Custom JS -->
-        <script src="carrito.js"></script>
-        <script>
+    </div>   
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+      <script src="carrito.js"></script>
+      <script>
         displayCart();
     </script>
 </body>
