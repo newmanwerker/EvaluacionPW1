@@ -19,34 +19,44 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav mx-auto d-flex">
                 <li class="nav-item active">
-                    <a class="nav-link" href="Main.html">Inicio</a>
+                    <a class="nav-link" href="Main.html">
+                        <img src="https://i.imgur.com/xuD3K4k.png" alt="Inicio" style="height: 45px;">
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    <a class="nav-link" href="nosotros.html">
+                        <img src="https://i.imgur.com/sdcYDQB.png" alt="Nosotros" style="height: 45px;">
+                    </a>
                 </li>
-                <li>
-                    <a class="nav-link" href="productos.html">Producto</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="productos.html">
+                        <img src="https://i.imgur.com/3sqABzA.png" alt="Productos" style="height: 45px;">
+                    </a>
                 </li>
-                <li>
-                    <a class="nav-link" href="contacto.html">Contacto</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">
+                        <img src="https://i.imgur.com/nZ2FG0h.png" alt="Contacto" style="height: 40px;">
+                    </a>
+                </li>            
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarCart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="https://i.imgur.com/jY2qD6l.png" alt="Carrito" style="height: 45px;">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarCart">
+                        <div id="cartItems"></div>
+                        <div class="dropdown-divider"></div>
+                        <button onclick="clearCart()" class="dropdown-item">Limpiar carrito</button>
+                        <a class="dropdown-item" href="checkout.html">Finalizar pago</a>
+                    </div>
                 </li>
-                <!-- Other navbar items -->
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarCart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Carrito
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarCart">
-        <div id="cartItems">
-        </div>
-        <div class="dropdown-divider"></div>
-        <button onclick="clearCart()" class="dropdown-item">Limpiar carrito</button>
-        <a class="dropdown-item" href="checkout.html">Finalizar pago</a>
-    </div>
-</li>
-<!-- Other navbar items -->
             </ul>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">
+                    <img src="https://i.imgur.com/F2aqgap.png" alt="Login" style="height: 45px;">
+                </a>
+            </li>
         </div>
     </nav>
     
@@ -61,12 +71,24 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img src="https://st1.uvnimg.com/9c/7e/21eacd5442169f073f3966e55b89/herramientas-basicas-principiantes-jardineria-header.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+                <h1>¡Nuevos servicios cada mes!</h1>
+                <p>¡Aprovecha y registrate en nuestra página!</p>
+            </div>
         </div>
         <div class="carousel-item">
             <img src="https://jardinesconvida.com/wp-content/uploads/2019/09/madera.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+                <h1>Image 2</h1>
+                <p>Description for Image 2</p>
+            </div>
         </div>
         <div class="carousel-item">
             <img src="https://jardinessinfronteras.files.wordpress.com/2020/08/terapia-alimentando-el-alma.-en-tiempos-caoticos-la-jardineria-se-convierte-en-terapia-1.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+                <h1>Image 3</h1>
+                <p>Description for Image 3</p>
+            </div>
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
