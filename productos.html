@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
+    <title>Jardinería Urban Roots</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://i.imgur.com/TZnEcFJ.png">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg ">
@@ -68,67 +69,88 @@
  <!-- Products -->
 <div id="products" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
     <!-- Existing products -->
-    <div class="product" >
-        <h2>Great Wall Haval H6</h2>
+    <div class="product card" data-discount="35">
+        <h2>Macetero</h2>
         <div style="text-align: center;">
-            <img class="product-image" src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1699455353-CMLye1U3UR.webp" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
-            <button class="add-to-cart-button" data-price="$19.690.000" onclick="addToCart('Great Wall Haval H6',19690000)"</button>
+            <img class="product-image card-img-top" src="https://lapicadelgordo.cl/1174-large_default/macetero-55cm-color-var.jpg"  alt="Maceteros">
+            <p class="card-text">El macetero es un elegante recipiente para plantas, disponible en varios estilos y materiales, perfecto para embellecer cualquier espacio.</p>
+            <button class="add-to-cart-button" onclick="addToCart('Macetero',3250)">
+                <span class="original-price" style="text-decoration: line-through;">$5.000</span>
+                <span class="discounted-price">$3.250</span>
+            </button>
+        </div>
+        <div class="discount-label" style="display: none;"></div>
+    </div>
+    <div class="product card" data-discount="25" style="flex: 1 0 30%; margin: 1%;">
+        <h2>Tierra de hojas</h2>
+        <div style="text-align: center;">
+            <img class="product-image card-img-top" src="https://www.prosan.cl/370-thickbox_default/tierra-de-hoja-compostada-prosan-30-litros-para-todo-tipo-de-plantas.jpg" alt="Auto fucsia"  title="Quick description of the product">
+            <p class="card-text">La tierra de hojas es un sustrato natural y nutritivo, ideal para mejorar la calidad del suelo y promover el crecimiento saludable de tus plantas.</p>
+            <button class="add-to-cart-button" onclick="addToCart('Tierra de hojas',4687)">
+                <span class="original-price" style="text-decoration: line-through;">$6.250</span>
+                <span class="discounted-price">$4.687</span>
+            </button>
+        </div>
+        <div class="discount-label" style="display: none;"></div>
+    </div>
+    <div class="product card" data-discount="20" style="flex: 1 0 30%; margin: 1%;">
+        <h2>Ramo de flores surtido 1</h2>
+        <div style="text-align: center;">
+            <img class="product-image card-img-top" src="https://cdnx.jumpseller.com/floresensantiago/image/47435553/Espiral-de-rosas-y-streliztzias.webp?1712360556" alt="Auto fucsia"  title="Quick description of the product">
+            <p class="card-text">El Ramo de Flores Surtido N°1 es una vibrante y elegante selección de flores frescas, perfecta para cualquier ocasión especial.</p>
+            <button class="add-to-cart-button" onclick="addToCart('Surtido flores basico',11512)">
+                <span class="original-price" style="text-decoration: line-through;">$14.390</span>
+                <span class="discounted-price">$11.512</span>
+            </button>
+        </div>
+        <div class="discount-label" style="display: none;"></div>
+    </div>
+    <div class="product card" style="flex: 1 0 30%; margin: 1%;">
+        <h2>Tijeras de podar Gardena 8702</h2>
+        <div style="text-align: center;">
+            <img class="product-image card-img-top" src="https://dcdn.mitiendanube.com/stores/198/737/products/tijera-87021-265112747ae8189d8216403572769506-640-0.png" alt="Auto fucsia"  title="Quick description of the product">
+            <p class="card-text">La Tijera de Jardín Gardena 8702 es una herramienta de alta calidad, diseñada para cortes precisos y cómodos en tus plantas y arbustos.</p>
+            <button class="add-to-cart-button" data-price="$91.000"  onclick="addToCart('Tijera de podar',91000)"</button>
         </div>
     </div>
-    <div class="product" style="flex: 1 0 30%; margin: 1%;">
-        <h2>Mazda CX-5</h2>
+    <div class="product card" style="flex: 1 0 30%; margin: 1%;">
+        <h2>Regadera de metal</h2>
         <div style="text-align: center;">
-            <img class="product-image" src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/versions/2022-05-20-CX-5_KFLA_KSN3LAF_46V_KG2_EXT_High_TransparentPNG.png" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
-            <button class="add-to-cart-button" data-price="$23.790.000" onclick="addToCart('Mazda CX-5',23790000)"</button>
+            <img class="product-image card-img-top" src="https://elho.xcdn.nl/RM2000,2000,C_OQ70/green-basics-watering-can-10ltr-lime-green/green_basics_watering_can_10ltr_lime_green.p1.png" alt="Auto fucsia"  title="Quick description of the product">
+            <p class="card-text">La Regadera de Metal es un accesorio elegante y duradero, diseñado para un riego preciso y eficiente de tus plantas, tanto en interiores como en exteriores.</p>
+            <button class="add-to-cart-button" data-price="$14.390" onclick="addToCart('Regadera de metal',14390)"</button>
         </div>
     </div>
-    <div class="product" style="flex: 1 0 30%; margin: 1%;">
-        <h2>Great Wall Haval Dargo</h2>
+    <div class="product card" style="flex: 1 0 30%; margin: 1%;">
+        <h2>Kit de herramientas</h2>
         <div style="text-align: center;">
-            <img class="product-image" src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1699379505-TjiLDVLzQg.webp" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
-            <button class="add-to-cart-button" data-price="$22.190.000" onclick="addToCart('Great Wall Haval Dargo',22190000)"</button>
+            <img class="product-image card-img-top" src="https://acdn.mitiendanube.com/stores/002/259/415/products/33949_11-b0083745b4bbe34f0916910741801660-1024-1024.png" alt="Auto fucsia"  title="Quick description of the product">
+            <p class="card-text">El Kit de Herramientas de Jardinería es un conjunto completo que incluye palas, rastrillos y cultivadores, todo lo necesario para mantener tu jardín en perfecto estado.</p>
+            <button class="add-to-cart-button" data-price="$45.000"  onclick="addToCart('Kit de herramientas',45000)"</button>
         </div>
     </div>
-    <div class="product" style="flex: 1 0 30%; margin: 1%;">
-        <h2>Changan Alsvin</h2>
+    <div class="product card" style="flex: 1 0 30%; margin: 1%;">
+        <h2>Guantes de jardineria</h2>
         <div style="text-align: center;">
-            <img class="product-image" src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/2021-08-09-new-changan-alsvin-elite-at.png" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
-            <button class="add-to-cart-button" data-price="$10.490.000"  onclick="addToCart('Changan Alsvin',10490000)"</button>
+            <img  class="product-image card-img-top" src="https://pf.nice-cdn.com/upload/image/product/large/default/esschert-design-guantes-de-jardineria-de-cuero-de-vaca-l-1682892-es.png" alt="Auto fucsia"  title="Quick description of the product">
+            <p class="card-text">Los Guantes de Jardinería ofrecen protección cómoda y resistente para tus manos, permitiéndote trabajar en el jardín con seguridad y facilidad.</p>
+            <button class="add-to-cart-button" data-price="$33.650"  onclick="addToCart('Guantes de jardineria',33650)"</button>
         </div>
     </div>
-    <div class="product" style="flex: 1 0 30%; margin: 1%;">
-        <h2>Great Wall Poer</h2>
+    <div class="product card" style="flex: 1 0 30%; margin: 1%;">
+        <h2>Manguera Extensible Hozelock</h2>
         <div style="text-align: center;">
-            <img class="product-image" src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1677503460-9VX4beIvCb.webp" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
-            <button class="add-to-cart-button" data-price="$17.481.100" onclick="addToCart('Great Wall Poer',17481100)"</button>
+            <img class="product-image card-img-top" src="https://barateroelectricomty.com/wp-content/uploads/2020/11/IMG_41976.png" alt="Auto fucsia"  title="Quick description of the product">
+            <p class="card-text">La Manguera Extensible Hozelock es versátil y compacta, se expande al regar y se contrae para un fácil almacenamiento, ideal para jardines de cualquier tamaño.</p>
+            <button class="add-to-cart-button" data-price="$18.500"  onclick="addToCart('Manguera extensible',18500)"</button>
         </div>
     </div>
-    <div class="product" style="flex: 1 0 30%; margin: 1%;">
-        <h2>Changan UNI-T</h2>
+    <div class="product card" style="flex: 1 0 30%; margin: 1%;">
+        <h2>Aspersor doble salida</h2>
         <div style="text-align: center;">
-            <img class="product-image" src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1709914091-kYIx90aZmD.webp" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
-            <button class="add-to-cart-button" data-price="$19.490.000"  onclick="addToCart('Changan UNI-T',19490000)"</button>
-        </div>
-    </div>
-    <div class="product" style="flex: 1 0 30%; margin: 1%;">
-        <h2>Mitsubishi Montero Sport</h2>
-        <div style="text-align: center;">
-            <img  class="product-image" src="https://www.arteagarentacar.cl/images/sites_products-636eaaa481a73.png" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
-            <button class="add-to-cart-button" data-price="$33.990.000"  onclick="addToCart('Mitsubishi Montero Sport',33990000)"</button>
-        </div>
-    </div>
-    <div class="product" style="flex: 1 0 30%; margin: 1%;">
-        <h2>Camioneta RAM 1200</h2>
-        <div style="text-align: center;">
-            <img class="product-image" src="https://www.arteagarentacar.cl/images/sites_products-6320eba8ec365.png" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
-            <button class="add-to-cart-button" data-price="$16.750.000"  onclick="addToCart('Camioneta RAM 1200',16750000)"</button>
-        </div>
-    </div>
-    <div class="product" style="flex: 1 0 30%; margin: 1%;">
-        <h2>Toyota Prius</h2>
-        <div style="text-align: center;">
-            <img  class="product-image" src="https://static.cargurus.com/images/forsale/2023/12/31/01/29/2023_toyota_prius-pic-714742726976446821-1024x768.jpeg" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
-            <button class="add-to-cart-button" data-price="$26.336.446"  onclick="addToCart('Toyota Prius',26336446)"</button>
+            <img  class="product-image card-img-top" src="https://linkme-ec.com/wp-content/uploads/2021/09/HB-6003CW%EF%80%A2C.png" alt="Auto fucsia"  title="Quick description of the product">
+            <p class="card-text">El Aspersor de Doble Salida proporciona una distribución uniforme de agua en dos direcciones, cubriendo eficientemente áreas amplias de tu jardín con un riego preciso y ajustable.</p>
+            <button class="add-to-cart-button" data-price="$18.000"  onclick="addToCart('Aspersor',18000)"</button>
         </div>
     </div>
 </div>
@@ -150,10 +172,13 @@
     </span>
     </div>
 </footer>
+       
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
       <script src="carrito.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
       <script>
         displayCart();
     </script>
+    
 </body>
 </html>

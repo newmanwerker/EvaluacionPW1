@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vista Principal</title>
+    <title>Jardinería Urban Roots</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://i.imgur.com/TZnEcFJ.png">
 </head>
 <body>
     <!-- Navbar -->
@@ -69,8 +70,8 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="https://st1.uvnimg.com/9c/7e/21eacd5442169f073f3966e55b89/herramientas-basicas-principiantes-jardineria-header.png" class="d-block w-100" alt="...">
+        <div class="carousel-item active carousel-redirect">
+            <img src="https://st1.uvnimg.com/9c/7e/21eacd5442169f073f3966e55b89/herramientas-basicas-principiantes-jardineria-header.png" class="d-block w-100" alt="..." onclick="window.location.href='login.html'"> 
             <div class="carousel-caption">
                 <h1>¡Nuevos servicios cada mes!</h1>
                 <p>¡Aprovecha y registrate en nuestra página!</p>
@@ -79,15 +80,15 @@
         <div class="carousel-item">
             <img src="https://jardinesconvida.com/wp-content/uploads/2019/09/madera.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption">
-                <h1>Image 2</h1>
-                <p>Description for Image 2</p>
+                <h1>Embellece tu jardín hoy</h1>
+                <p>Transforma tu espacio verde con nuestra selección de plantas y flores únicas. ¡Haz que tu jardín brille todo el año!</p>
             </div>
         </div>
         <div class="carousel-item">
             <img src="https://jardinessinfronteras.files.wordpress.com/2020/08/terapia-alimentando-el-alma.-en-tiempos-caoticos-la-jardineria-se-convierte-en-terapia-1.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption">
-                <h1>test</h1>
-                <p>Description for Image 3</p>
+                <h1>Tu paraíso verde te espera</h1>
+                <p>Descubre la belleza natural con nuestros productos de jardinería de alta calidad. ¡El jardín de tus sueños está a un clic de distancia!</p>
             </div>
         </div>
     </div>
@@ -103,39 +104,56 @@
 
 <!-- Text between carousel and products -->
 <div style="text-align: center; padding: 20px;">
-    <h2>Nuestros productos principales!</h2>
+    <h2>Nuestros productos en oferta!</h2>
 </div>
 
  <!-- Products -->
 <div id="products" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
     <!-- Existing products -->
     <div class="card">
-    <div class="product" >
-        <h2>Maceteros </h2>
+    <div class="product" data-discount="35" >
+        <h2>Macetero </h2>
         <div class="product-image">
             <img src="https://lapicadelgordo.cl/1174-large_default/macetero-55cm-color-var.jpg" alt="macetero" width="300" height="300">
-            <button class="add-to-cart-button" data-price="$5.000" onclick="addToCart('Maceteros',5000)"</button>
+            <button class="add-to-cart-button" onclick="addToCart('Macetero',3250)">
+                <span class="original-price" style="text-decoration: line-through;">$5.000</span>
+                <span class="discounted-price">$3.250</span>
+            </button>
         </div>
+        <div class="discount-label" style="display: none;">
+            35% Off
+        </div>
+        
     </div>
     </div>
     <!-- Repeat for each product -->
     <div class="card">
-    <div class="product" >
+    <div class="product" data-discount="25" >
         <h2>Tierra de hojas</h2>
         <div class="product-image">
             <img src="https://www.prosan.cl/370-thickbox_default/tierra-de-hoja-compostada-prosan-30-litros-para-todo-tipo-de-plantas.jpg" alt="Tierra de hojas" width="300" height="300">
-            <button class="add-to-cart-button" data-price="$6.290" onclick="addToCart('Tierra de hojas',6290)"</button>
+            <button class="add-to-cart-button" onclick="addToCart('Tierra de hojas',4687)">
+                <span class="original-price" style="text-decoration: line-through;">$6.250</span>
+                <span class="discounted-price">$4.687</span>
+            </button>
+        </div>
+        <div class="discount-label" style="display: none;">
         </div>
     </div>
+
     </div>
     <!-- Repeat for each product -->
     <div class="card" >
-    <div class="product" >
-        <h2>Ramo de flores surtido</h2>
+    <div class="product" data-discount="20" >
+        <h2>Ramo de flores surtido 1</h2>
         <div class="product-image">
             <img src="https://cdnx.jumpseller.com/floresensantiago/image/47435553/Espiral-de-rosas-y-streliztzias.webp?1712360556" alt="Auto fucsia" width="300" height="300">
-            <button class="add-to-cart-button" data-price="$14.390" onclick="addToCart('Ramo de flores surtido',14390)"</button>
+            <button class="add-to-cart-button" onclick="addToCart('Surtido flores basico',11512)">
+                <span class="original-price" style="text-decoration: line-through;">$14.390</span>
+                <span class="discounted-price">$11.512</span>
+            </button>
         </div>
+        <div class="discount-label" style="display: none;"></div>
     </div>
     </div>
 </div>

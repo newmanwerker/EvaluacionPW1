@@ -127,3 +127,19 @@ h1{
     text-align: center;
     font-size: 72px;
 }
+.carousel-redirect{
+    cursor: pointer;
+
+}
+.discount-label {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

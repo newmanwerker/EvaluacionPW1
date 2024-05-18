@@ -72,3 +72,15 @@ $(document).ready(function(){
         // Aquí podrías enviar el formulario utilizando AJAX o cualquier otro método
     });
 });
+
+
+var products = document.getElementsByClassName('product');
+
+for (var i = 0; i < products.length; i++) {
+    var discount = products[i].getAttribute('data-discount');
+    if (discount) {
+        var discountLabel = products[i].getElementsByClassName('discount-label')[0];
+        discountLabel.style.display = 'block';
+        discountLabel.textContent = discount + '% ';
+    }
+}
