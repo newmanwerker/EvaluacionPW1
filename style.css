@@ -97,6 +97,7 @@ transition: 1.4s; /* Transition effect */
     background-color: #02585500;
     padding: 10px;
     text-align: center;
+    font-size: 36px;
 }
 .carousel-caption {
     white-space: nowrap;
