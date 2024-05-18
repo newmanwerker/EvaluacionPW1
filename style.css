@@ -8,7 +8,7 @@ h2{
     font-weight: bold;
 }
 .footer{    
-
+    font-family: 'Roboto',sans-serif;
     background:#02585500;
     color:rgb(0, 0, 0);
     font-weight: bold;
@@ -67,18 +67,34 @@ transition: 1.4s; /* Transition effect */
 .product {
     flex: 1 0 30%;
     margin: 1%;
+    font-family: 'Roboto',sans-serif;
 }
 
 .product-image {
     text-align: center;
     
     
+    
 }
+.product-image:hover {
+    transform: scale(1.1);
+    transition: transform .2s;
+}
+
+
 .card {
+    display: grid;
     background-color: #02585500;
     color: rgb(0, 0, 0);
     padding: 10px;
     text-align: center;
-    transition: 0.3s;
 }
 
+.headerproductos{
+    font-family: 'Roboto',sans-serif;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background-color: #02585500;
+    padding: 10px;
+    text-align: center;
+}

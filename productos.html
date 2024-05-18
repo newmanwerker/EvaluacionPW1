@@ -6,110 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <style>
-        .carousel-item img {
-            object-fit: fill; /* or 'contain' depending on your needs */
-            height: 756px; /* adjust as needed */
-        }
-    </style>
-    <style>
-        .add-to-cart-button {
-            background-color: #4CAF50; /* Green background */
-            border: none; /* No border */
-            color: white; /* White text */
-            padding: 15px 32px; /* Some padding */
-            text-align: center; /* Centered text */
-            text-decoration: none; /* No underline */
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer; /* Mouse pointer on hover */
-            border-radius: 12px; /* Rounded corners */
-            transition: background-color 0.4s, color 0.4s;
-            transition-duration: 0.4s; /* Transition effect */
-        }
-        .add-to-cart-button:before {
-        content: attr(data-price); /* Show price by default */
-    }
-    .add-to-cart-button:hover:before {
-        content: 'Añadir al carrito'; /* Show 'Add to cart' on hover */
-    }
-    
-        .add-to-cart-button:hover {
-            background-color: #2b692f; /* Green background on hover */
-        }
-
-
-    </style>
-    <style>
-        .product-image:hover {
-            transform: scale(1.1);
-            transition: transform .2s;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg ">
         <!-- Navbar content -->
-        <a class="navbar-brand" href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwIPHT---ar3QBrKBdygiiGxiyABUXBx4TItwe0yHy_g&s" alt="Logo" style="width:40px;"></a>
+        <a class="navbar-brand" href="#"><img src="https://i.imgur.com/TZnEcFJ.png" alt="Logo" style="width:120px;"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav mx-auto d-flex">
                 <li class="nav-item active">
-                    <a class="nav-link" href="Main.html">Inicio</a>
+                    <a class="nav-link" href="Main.html">
+                        <img src="https://i.imgur.com/xuD3K4k.png" alt="Inicio" style="height: 45px;">
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    <a class="nav-link" href="nosotros.html">
+                        <img src="https://i.imgur.com/sdcYDQB.png" alt="Nosotros" style="height: 45px;">
+                    </a>
                 </li>
-                <li>
-                    <a class="nav-link" href="productos.html">Producto</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="productos.html">
+                        <img src="https://i.imgur.com/3sqABzA.png" alt="Productos" style="height: 45px;">
+                    </a>
                 </li>
-                <li>
-                    <a class="nav-link" href="contacto.html">Contacto</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">
+                        <img src="https://i.imgur.com/nZ2FG0h.png" alt="Contacto" style="height: 40px;">
+                    </a>
+                </li>            
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarCart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="https://i.imgur.com/jY2qD6l.png" alt="Carrito" style="height: 45px;">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarCart">
+                        <div id="cartItems"></div>
+                        <div class="dropdown-divider"></div>
+                        <button onclick="clearCart()" class="dropdown-item">Limpiar carrito</button>
+                        <a class="dropdown-item" href="checkout.html">Finalizar pago</a>
+                    </div>
                 </li>
-                <!-- Other navbar items -->
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarCart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Carrito
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarCart">
-        <div id="cartItems">
-        </div>
-        <div class="dropdown-divider"></div>
-        <button onclick="clearCart()" class="dropdown-item">Limpiar carrito</button>
-        <a class="dropdown-item" href="checkout.html">Finalizar pago</a>
-    </div>
-</li>
-<!-- Other navbar items -->
             </ul>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">
+                    <img src="https://i.imgur.com/F2aqgap.png" alt="Login" style="height: 45px;">
+                </a>
+            </li>
         </div>
     </nav>
     
 
-   <!-- Carousel -->
 
-
-<!-- Text between carousel and products -->
-<div style="text-align: center; padding: 20px;">
-    <h2>Revisa todos nuestros productos aqui!</h2>
+<div class="headerproductos" style="text-align: center; padding: 20px;">
+    <h2>Revisa todos nuestros productos aqui! </h2>
 </div>
 
  <!-- Products -->
 <div id="products" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
     <!-- Existing products -->
-    <div class="product" style="flex: 1 0 30%; margin: 1%;">
+    <div class="product" >
         <h2>Great Wall Haval H6</h2>
         <div style="text-align: center;">
             <img class="product-image" src="https://dercocenter-api.s3.us-east-1.amazonaws.com/images/version/1699455353-CMLye1U3UR.webp" alt="Auto fucsia" width="320" height="200" title="Quick description of the product">
             <button class="add-to-cart-button" data-price="$19.690.000" onclick="addToCart('Great Wall Haval H6',19690000)"</button>
         </div>
     </div>
-    <!-- Repeat for each product -->
     <div class="product" style="flex: 1 0 30%; margin: 1%;">
         <h2>Mazda CX-5</h2>
         <div style="text-align: center;">
@@ -117,7 +82,6 @@
             <button class="add-to-cart-button" data-price="$23.790.000" onclick="addToCart('Mazda CX-5',23790000)"</button>
         </div>
     </div>
-    <!-- Repeat for each product -->
     <div class="product" style="flex: 1 0 30%; margin: 1%;">
         <h2>Great Wall Haval Dargo</h2>
         <div style="text-align: center;">
@@ -125,7 +89,6 @@
             <button class="add-to-cart-button" data-price="$22.190.000" onclick="addToCart('Great Wall Haval Dargo',22190000)"</button>
         </div>
     </div>
-    <!-- New products -->
     <div class="product" style="flex: 1 0 30%; margin: 1%;">
         <h2>Changan Alsvin</h2>
         <div style="text-align: center;">
@@ -183,20 +146,25 @@
     cursor: pointer;">Página siguiente</button>
 </div>
 
-<footer class="footer mt-auto py-3 bg-light">
+<footer class="footer mt-auto py-3 ">
     <div class="container">
-        <span class="text-muted">
-            "©2024 AutomotoraSebaFeña. Todos los derechos reservados. 
-            Somos su destino integral para la adquisición de vehículos nuevos y usados de todas las marcas existentes. 
-            Nuestra pasión por la excelencia en el servicio al cliente nos impulsa a ofrecer una amplia gama de opciones para satisfacer sus necesidades de movilidad. 
-            Visítenos hoy mismo para descubrir nuestra selección de vehículos premium y experimentar un servicio excepcional. | Teléfono: +56 9 1234 5678 | Correo Electrónico: AutitoBonito@gmail.com"
-        </span>
+        <span>
+            **© 2024 [Nombre de la Empresa] - Todos los derechos reservados.**
+
+            **Dirección:** Calle Falsa 123, Ciudad, País
+
+            **Teléfono:** (+123) 456-7890 | **Correo Electrónico:** info@nombreempresa.com
+
+            **Horarios de Atención:** Lunes a Viernes: 9:00 AM - 6:00 PM | Sábados: 10:00 AM - 4:00 PM
+
+            **Políticas:** [Términos y Condiciones](#) | [Política de Privacidad](#)
+
+            **Nuestra misión:** Traer la naturaleza a tu hogar con las mejores plantas y el servicio más dedicado. ¡Gracias por elegirnos para embellecer tus espacios!
+
+    </span>
     </div>
 </footer>
-    <!-- Bootstrap JS and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <!-- Custom JS -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
       <script src="carrito.js"></script>
       <script>
         displayCart();
