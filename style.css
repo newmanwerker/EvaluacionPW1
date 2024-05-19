@@ -13,6 +13,9 @@ h2{
     color:rgb(0, 0, 0);
     font-weight: bold;
 }
+.border-footer{
+    border-top: 1px solid #025855;
+}
 
 /* CARRUSEL */
 .carousel-item img {
@@ -115,7 +118,7 @@ transition: 1.4s; /* Transition effect */
 .card-text2 {
     font-family: 'Roboto',sans-serif;
     font-weight: bold;
-    color: rgb(168, 89, 10);
+    color: rgb(0, 0, 0);
     background-color: #02585500;
     padding: 10px;
     text-align: center;
