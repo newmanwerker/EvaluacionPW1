@@ -41,10 +41,10 @@ function calculateTotal() {
 //Validaciones con jQuery
 $(document).ready(function(){
     $("#validarFormulario").submit(function(event){
-        // Evitar que el formulario se envíe automáticamente
+        // evitar que el formulario se envíe automáticamente
         event.preventDefault();
         
-        // Realizar las validaciones
+        // realizar las validaciones
         var edad = $("#edad").val();
         var nombre = $("#nombre").val();
         var apellido = $("#apellido").val();
@@ -57,19 +57,46 @@ $(document).ready(function(){
             alert("Edad inválida.");
             return;
         }
-        // Nombre, Apellidos: largo entre 3 y 20 caracteres
+        // nombre, apellidos: largo entre 3 y 20 caracteres
         if(nombre.length < 3 || nombre.length > 20 ||
             apellido.length < 3 || apellido.length > 20){
             alert("El Nombre y los Apellidos deben tener entre 3 y 20 caracteres.");
             return;
         }
         else{
-            // Validaciones aceptadas
+            // validaciones aceptadas
             alert("¡Registro exitoso!");
-            // Limpiar el formulario
+            // limpiar el formulario
             $("#validarFormulario")[0].reset();
         }       
-        // Aquí podrías enviar el formulario utilizando AJAX o cualquier otro método
+    });
+});
+
+$(document).ready(function(){
+    $("#validarLogin").submit(function(event){
+        // Evitar que el formulario se envíe automáticamente
+        event.preventDefault();
+        
+        // validaciones
+        var usuario = $("#usuario").val();
+        var contraseña = $("#contraseña").val();
+
+        // usuario: largo entre 3 y 20 caracteres
+        if(usuario.length < 3 || usuario.length > 20){
+            alert("El Usuario debe tener entre 3 y 20 caracteres.");
+            return;
+        }
+        // contraseña: largo entre 6 y 20 caracteres
+        if(contraseña.length < 6 || contraseña.length > 20){
+            alert("La Contraseña debe tener entre 6 y 20 caracteres.");
+            return;
+        }
+        else{
+            // validaciones aceptadas
+            alert("¡Login exitoso!");
+            // Limpiar el formulario
+            $("#validarLogin")[0].reset();
+        }       
     });
 });
 
