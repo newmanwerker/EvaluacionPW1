@@ -7,6 +7,7 @@ function addToCart(item, price) {
     displayCart();
     alert(item + ' fue añadido a tu carrito!');
 }
+
 function removeFromCart(item) {
     var index = cart.findIndex(cartItem => cartItem.name === item);
     if (index > -1) {
@@ -23,6 +24,20 @@ function displayCart() {
     for (var i = 0; i < cart.length; i++) {
         cartItemsDiv.innerHTML += '<div class="dropdown-item">' + cart[i].name + ' - ' + cart[i].price + '<button onclick="removeFromCart(\'' + cart[i].name + '\')">Eliminar</button></div>';
     }
+    displayCartDetails();
+}
+
+function displayCartDetails() {
+    var cartDetails = document.getElementById('cartDetails');
+    var cartTotal = document.getElementById('cartTotal');
+    cartDetails.innerHTML = '';
+    cartTotal.innerHTML = '';
+    var total = 0;
+    for (var i = 0; i < cart.length; i++) {
+        total += cart[i].price;
+        cartDetails.innerHTML += '<tr><td>' + cart[i].name + '</td><td>' + cart[i].price + '</td><td><button onclick="removeFromCart(\'' + cart[i].name + '\')" style="background-color: #faae50; color: white;">X</button></td></tr>';
+    }
+    cartTotal.innerHTML = '<h4>Total: $' + total + '</h4>';
 }
 
 function clearCart() {
@@ -31,14 +46,11 @@ function clearCart() {
     displayCart();
 }
 
-function calculateTotal() {
-    var total = 0;
-    for (var i = 0; i < cart.length; i++) {
-        total += Number(cart[i].price);
-    }
-    return total;
-}
+
+
+
 //Validaciones con jQuery
+//VALIDAR FORMULARIO DE CONTACTO
 $(document).ready(function(){
     $("#validarFormulario").submit(function(event){
         // evitar que el formulario se envíe automáticamente
@@ -72,6 +84,7 @@ $(document).ready(function(){
     });
 });
 
+//VALIDAR LOGIN
 $(document).ready(function(){
     $("#validarLogin").submit(function(event){
         // Evitar que el formulario se envíe automáticamente
@@ -101,6 +114,7 @@ $(document).ready(function(){
 });
 
 
+//DESCUENTO DE PRODUCTOS
 var products = document.getElementsByClassName('product');
 
 for (var i = 0; i < products.length; i++) {
