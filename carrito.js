@@ -1,4 +1,4 @@
-//Funciones JavaScript
+//Funciones JavaScript para el carrito de compras
 var cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function addToCart(item, price) {
@@ -56,13 +56,13 @@ $(document).ready(function(){
         // evitar que el formulario se envíe automáticamente
         event.preventDefault();
         
-        // realizar las validaciones
+        // validaciones
         var edad = $("#edad").val();
         var nombre = $("#nombre").val();
         var apellido = $("#apellido").val();
 
         if(edad < 18){
-            alert("Debes ser mayor de edad para registrarte.");
+            alert("Debes ser mayor de edad para enviar comentarios.");
             return;
         }
         if(edad > 99){
@@ -77,7 +77,7 @@ $(document).ready(function(){
         }
         else{
             // validaciones aceptadas
-            alert("¡Registro exitoso!");
+            alert("¡Mensaje recibido con exito!");
             // limpiar el formulario
             $("#validarFormulario")[0].reset();
         }       
@@ -105,9 +105,13 @@ $(document).ready(function(){
             return;
         }
         else{
-            // validaciones aceptadas
+            // validacion aceptada
             alert("¡Login exitoso!");
-            // Limpiar el formulario
+
+            // Redirigir a la página principal
+            window.location.replace("Main.html");
+
+            // Limpiar el login
             $("#validarLogin")[0].reset();
         }       
     });
